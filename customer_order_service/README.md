@@ -57,6 +57,7 @@ This is a Python-based service that provides a REST API for managing customers a
     DB_USER=your_username
     DB_PASS=your_password
     DB_NAME=sav_db
+![Get Customers](png/db.png)
 
     # Application settings
     APP_ENV=development
@@ -93,8 +94,9 @@ This is a Python-based service that provides a REST API for managing customers a
 ## API Endpoints
 
 - **List Customers:** `GET /api/customers/`
+![Get Customers](png/get_customers.png)
 - **List Orders:** `GET /api/orders/`
-
+![Get Orders](png/get_orders.png)
 ## Running Tests
 
 To run tests and check coverage, use the following command:

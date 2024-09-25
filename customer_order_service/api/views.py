@@ -38,7 +38,7 @@ class LoginAPIView(APIView):
             user = authenticate(username=serializer.data['username'], password=serializer.data['password']) 
             if user:
                 token, created = Token.objects.get_or_create(user=user)
-                return Response({'token': [token.key], "Sucsses":"Login SucssesFully"}, status=status.HTTP_201_CREATED ) 
+                return Response({'token': [token.key], "Success":"Login Successfull"}, status=status.HTTP_201_CREATED ) 
             return Response({'Message': 'Invalid Username and Password'}, status=401)
 class CustomerListView(APIView):
     permission_classes = [permissions.AllowAny]
@@ -61,7 +61,7 @@ class CustomerListView(APIView):
         return Response(serializer.errors, status=400)
 
 class OrderListView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def get(self, request):
         cache_key = f'orders_{request.GET.urlencode()}'
