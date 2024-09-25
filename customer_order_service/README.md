@@ -44,6 +44,7 @@ This is a Python-based service that provides a REST API for managing customers a
     psql -c "ALTER ROLE your_username SET default_transaction_isolation TO 'read committed';"
     psql -c "ALTER ROLE your_username SET timezone TO 'UTC';"
     psql -c "GRANT ALL PRIVILEGES ON DATABASE customer_order_service TO your_username;"
+    \q 
     ```
 
 4. **Configure environment variables:**
@@ -62,19 +63,21 @@ This is a Python-based service that provides a REST API for managing customers a
     # Application settings
     APP_ENV=development
     APP_DEBUG=true
-    APP_SECRET=your_secret_key
+    APP_SECRET=secret_key
 
     # API keys
-    API_KEY=your_api_key
-    API_SECRET=your_api_secret
+    API_KEY=api_key
+    API_SECRET=api_secret
 
     # Africa's Talking credentials
-    AFRICASTALKING_USERNAME=your_africastalking_username
-    AFRICASTALKING_API_KEY=your_africastalking_api_key
+    AFRICASTALKING_USERNAME=africastalking_username
+    AFRICASTALKING_API_KEY=africastalking_api_key
     ```
 
 5. **Apply migrations:**
-
+    ```sh
+    python manage.py makemigrations
+    ```
     ```sh
     python manage.py migrate
     ```
