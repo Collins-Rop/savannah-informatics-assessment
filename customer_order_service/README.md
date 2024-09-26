@@ -106,3 +106,10 @@ To run tests and check coverage, use the following command:
 
 ```sh
 pytest --cov=api
+```
+
+## Screenshots
+![Get Orders](png/DRF_get.png)
+![Get Customers](png/DRF_customers.png)
+![Database](png/db.png)
+![Database Orders_table](png/db_orders.png)

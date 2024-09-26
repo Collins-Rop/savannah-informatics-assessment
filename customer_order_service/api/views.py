@@ -61,7 +61,7 @@ class CustomerListView(APIView):
         return Response(serializer.errors, status=400)
 
 class OrderListView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         cache_key = f'orders_{request.GET.urlencode()}'
